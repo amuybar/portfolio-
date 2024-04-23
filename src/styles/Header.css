@@ -1,0 +1,42 @@
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color:#010340 ;
+  color:#ffffff ;
+  z-index: 10;
+}
+
+.header h1 {
+  display: none; 
+}
+
+.header .img1{
+  display: block;
+  height: 50px;
+  width: 50px;
+}
+.header .img2{
+  display: block;
+  height: 50px;
+  margin-right: 2rem;
+  width: 50px;
+}
+
+
+
+@media (min-width: 768px) {
+  .header h1 {
+    display: block; 
+  }
+
+  .header .img1 {
+    display: none; 
+  }
+}

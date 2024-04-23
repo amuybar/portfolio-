@@ -1,0 +1,37 @@
+.footer {
+  background-color: #f0f0f0;
+  padding: 0 10px;
+  text-align:start;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; 
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.social-media img {
+  margin: 1rem; 
+}
+
+.social-media h3 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.social-media ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+.copyright p {
+  font-size: 0.9rem;
+  color: #333;
+}

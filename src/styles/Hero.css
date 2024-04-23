@@ -1,0 +1,208 @@
+.hero {
+  display: block;
+  min-height: 70vh;
+  align-items: center;
+  padding: 2rem;
+  background-color:#ccebfa ;
+  margin-top: 70px;
+}
+.hero-section{
+  display:flex;
+ justify-content: center;
+}
+.hero-content {
+  flex: 2;
+  width: 50%;
+  color: #041236;
+}
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.hero-content h2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.hero-content li {
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.hero-content p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.hero img {
+  position: relative;
+  max-width: 400px;
+  border-radius: 15px;
+  margin: auto;
+  opacity: 0.9;
+  object-fit: cover;
+}
+
+.hero p {
+  width: 100%;
+  margin-top: 2rem;
+}
+.hero button{
+  width: 200px;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  background-color: #041236;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 500;
+
+}
+.hero button:hover{
+  background-color: #ccebfa;
+  color: #041236;
+  cursor: pointer;
+  transition: 0.5s;
+  border: 1px solid #041236;
+  border-radius: 15px;
+
+}
+.hero h5{
+  font-size: 0.8rem;
+  font-weight: 200;
+  color: #333333;
+
+}
+.socials {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+  border-radius: 14px;
+  background-color: #e4f5fd;
+  margin: 20px auto;
+}
+
+.socials img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.socials img:hover {
+  transform: scale(1.1);
+}
+.sticky-bar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff; /* Example bar background color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add subtle shadow */
+  opacity: 0; /* Initially hide the bar */
+  transition: opacity 0.5s ease-in-out;
+  z-index: 20; /* Ensure bar stays above other content */
+}
+
+.hero + .sticky-bar { /* Target bar only after hero section */
+  opacity: 1; /* Show the bar after passing the hero section */
+}
+
+.sticky-bar h2,
+.sticky-bar button {
+  margin: 0; /* Remove default margins */
+}
+
+/* Style your h2 and button as needed */
+.sticky-bar h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.sticky-bar button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sticky-bar button:hover {
+  background-color: #0069d9;
+}
+
+
+@media screen and (max-width: 768px) {
+  .hero-section{
+    flex-direction: column;
+  
+  }
+  .hero img {
+    margin-top: 2rem;
+    width: 90%;
+    align-self: center;
+
+  }
+  .hero-content {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .hero-content h1 {
+    font-size: 3rem;
+   
+  }
+  .hero-content h2 {
+    font-size: 1.2rem;
+    
+  }
+  .hero-content li {
+    font-size: 1rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+    
+  }
+  .hero button{
+    width: 100%;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    background-color: #041236;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 500;
+  
+  }
+  .socials {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+    border-radius: 14px;
+    background-color: #e4f5fd;
+    margin: 20px auto;
+  }
+  
+  .socials img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .socials img:hover {
+    transform: scale(1.1);
+  }
+}
