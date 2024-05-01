@@ -4,7 +4,7 @@ import '../styles/About.css';
 
 function About() {
   const handleClick=() => {
-    window.location.href = 'https://barrackamuyunzu.club/pricing'
+    window.location.href = '/pricing'
   }
   return (
     <section class="about">

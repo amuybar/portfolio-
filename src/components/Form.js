@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import '../styles/PopupForm.css';
 
-const Form = ({ onSubmit ,onClose}) => {
+const Form = ({ onSubmit }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(name, email, message); // Pass form data to parent component
+    // Call the onSubmit function passed from the parent with the form data
+    onSubmit({ name, email, message });
     setName(''); // Clear form after submit
     setEmail('');
     setMessage('');
@@ -16,7 +17,7 @@ const Form = ({ onSubmit ,onClose}) => {
 
   return (
     <form onSubmit={handleSubmit} className='popup-form'>
-       <label htmlFor="message">Message:</label>
+      <label htmlFor="message">Message:</label>
       <textarea
         id="message"
         name="message"
@@ -43,11 +44,9 @@ const Form = ({ onSubmit ,onClose}) => {
         onChange={(e) => setEmail(e.target.value)}
         required
       />
-     <div className='buttons'>
-      <button type="submit">Send </button>
-      <button onClick={onClose} className="close-button">
-            Close
-          </button></div>
+      <div className='buttons'>
+        <button type="submit">Send </button>
+      </div>
     </form>
   );
 };

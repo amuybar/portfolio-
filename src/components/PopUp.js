@@ -1,24 +1,16 @@
 import Form from './Form'; 
 import '../styles/PopupForm.css';
+import { sendMessage } from '../api/api_services';
 
 const Popup = ({ isOpen, onClose }) => {
-  const handleSubmit = async (name, email, message) => {
+  const handleSubmit = async (formData) => {
     try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email, message }),
-      });
-      if (response.ok) {
-        console.log('Email sent successfully!');
-        onClose(); 
-      } else {
-        console.error('Failed to send email');
-      }
+      // Make an API call to send the form data to the backend
+      await sendMessage(formData);
+      console.log('Message sent successfully!');
+      onClose(); // Close the popup
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error('Error sending message:', error);
     }
   };
   return (

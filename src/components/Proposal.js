@@ -1,8 +1,15 @@
 import React from 'react'
 import '../styles/Proposal.css';
+import { useNavigate } from 'react-router-dom';
 
 
 function Proposal() {
+const naigate=useNavigate();
+
+  const handleNavigate = () => {
+    naigate('/send-request')
+  };
+  
   return (
     <section class="proposal">
   <h2>Grow Your Business Online with a Professional Website</h2>
@@ -25,7 +32,7 @@ function Proposal() {
       <p>I understand the importance of budget. I offer competitive rates and transparent pricing, so you can achieve your online goals without breaking the bank.</p>
     </div>
   </div>
-  <button class="cta-button">Request for a Design/Demo</button>
+  <button class="cta-button" onClick={handleNavigate}>Request for a Design/Demo</button>
 </section>
 
   )
