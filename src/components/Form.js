@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/PopupForm.css';
 
-const Form = ({ onSubmit }) => {
+const Form = ({ onSubmit ,onClose}) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -13,6 +13,7 @@ const Form = ({ onSubmit }) => {
     setName(''); // Clear form after submit
     setEmail('');
     setMessage('');
+    onClose(); // Close the popup
   };
 
   return (

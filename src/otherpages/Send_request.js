@@ -1,49 +1,28 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/request.css';
+import { sendServiceRequest } from '../api/api_services';
 
 const RequestPage = ({ selectedPricing }) => {
   const navigate = useNavigate();
   const [fullName, setFullName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [email, setEmail] = useState('');
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Construct the data payload to send to the backend
-    const requestData = {
-      fullName,
-      phoneNumber,
-      email,
-      selectedPricing,
-    };
-
     try {
-      // Send the request to the backend (replace 'backendEndpoint' with your actual backend endpoint)
-      const response = await fetch('backendEndpoint', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(requestData),
-      });
-
-      // Check if the request was successful
-      if (response.ok) {
-        // Reset the form fields
-        setFullName('');
-        setPhoneNumber('');
-        setEmail('');
-        
-        // Navigate the user back to the home page
-        navigate('/');
-      } else {
-        // Handle error scenarios
-        console.error('Error:', response.statusText);
-      }
-    } catch (error) {
-      console.error('Error:', error);
+      // Call the sendRequest function from api_services
+      await sendServiceRequest(fullName, phoneNumber, email);
+      
+      // Optionally, provide feedback to the user upon successful submission
+      alert('Request submitted successfully!');
+      navigate('/'); // Redirect to home page or any other page
+    } catch (err) {
+      // Handle any errors that occur during the request
+      setError(err.message);
     }
   };
 
@@ -84,6 +63,7 @@ const RequestPage = ({ selectedPricing }) => {
           />
         </label>
         <button type="submit">Submit</button>
+        {error && <p className="error">{error}</p>}
       </form>
     </div>
   );

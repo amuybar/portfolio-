@@ -1,16 +1,18 @@
 import Form from './Form'; 
 import '../styles/PopupForm.css';
 import { sendMessage } from '../api/api_services';
+import Alert from './Alert';
 
 const Popup = ({ isOpen, onClose }) => {
   const handleSubmit = async (formData) => {
     try {
       // Make an API call to send the form data to the backend
       await sendMessage(formData);
-      console.log('Message sent successfully!');
+      <Alert type="success" message="Success! Your Message has been submitted." />
       onClose(); // Close the popup
     } catch (error) {
       console.error('Error sending message:', error);
+      <Alert type="error" message="Error! Failed to submit your Message." />
     }
   };
   return (

@@ -3,7 +3,7 @@
 // Function to send a message to the backend
 export async function sendMessage(formData) {
   try {
-    const response = await fetch('https://portfolio-backend-23s0.onrender.com/message', {
+    const response = await fetch('https://portfolio-backend-23s0.onrender.com/api/message', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -21,10 +21,13 @@ export async function sendMessage(formData) {
 
 
 
+
 // Function to send a service request to the backend
-export const sendServiceRequest = async (requestData) => {
+export const sendServiceRequest = async (fullName, phoneNumber, email) => {
   try {
-    const response = await fetch('https://portfolio-backend-23s0.onrender.com/request', {
+    const requestData = { fullName, phoneNumber, email };
+
+    const response = await fetch('https://portfolio-backend-23s0.onrender.com/api/request', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -39,3 +42,4 @@ export const sendServiceRequest = async (requestData) => {
     throw error;
   }
 };
+
