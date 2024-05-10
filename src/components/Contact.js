@@ -58,7 +58,7 @@ function Contact() {
     <button type="submit">Send Message</button>
   </form>
   <div class="contact-info">
-    <p>Phone: <a href="tel:+254742812483">(+254)742812483</a></p>  <p>Email: <a href="mailto:odaribq@gmail.com.com">odaribq@gmail.com.com</a></p>  </div>
+    <p>Phone: <a href="tel:+254742812483">(+254)742812483</a></p>  <p>Email: <a href="mailto:odaribq@gmail.com.com">odaribq@gmail.com</a></p>  </div>
 </section>
 
   )

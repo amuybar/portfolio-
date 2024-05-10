@@ -40,7 +40,7 @@ function Hero() {
 </div>
   <div className='hero-section'>
     <div class="hero-content">
-    <h1>Talk to a web Devepoler</h1>
+    <h1>Talk to a web Developer</h1>
     <h2>Get In touch With Barrack to discuss: </h2>
     <ul>
       <li>Growiing your business through  online Presence </li>
