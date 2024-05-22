@@ -1,7 +1,13 @@
 import React from 'react'
 import '../styles/Project.css';
+import { useNavigate } from 'react-router-dom';
 
 function Projects() {
+  const navigate=useNavigate();
+  
+  const handleNavigate = () => {
+    navigate('/project')
+  };
   return (
     <section class="projects">
     <h2>See My Work in Action</h2>
@@ -22,7 +28,7 @@ function Projects() {
         </a>
       </div>
       </div>
-    <a href="portfolio.html" class="view-all-button">View All Projects</a>
+    <button onClick={handleNavigate} class="view-all-button">View All Projects</button>
   </section>
   )
 }

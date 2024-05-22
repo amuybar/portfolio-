@@ -1,65 +1,120 @@
-import React, { useState } from 'react';
-import '../styles/pricing.css'; // Make sure this path is correct
+import React from 'react';
+import '../styles/pricing.css'; 
 import { useNavigate } from 'react-router-dom';
 
 const PricingPage = () => {
-  const navigate=useNavigate();
-  
+  const navigate = useNavigate();
+
   const handleGetButtonClick = () => {
-  navigate('/send-request')
+    navigate('/send-request')
   };
 
-  
-
-  const handleBack = () => {
-    navigate('/');
-  };
-  
-  // Sample data for each pricing tier
-  const pricingData = [
-    {
-      tier: 'Basic',
-      price: '$90',
-      services: ['Very Responsive Website to mobile and desktop','Basic Seo','Basic features', 'Limited support'],
-    },
-    {
-      tier: 'Standard',
-      price: '$200',
-      services: ['Basic + Advanced features', 'Highly Responsive website to all devices','Site optimization','Priority support'],
-    },
-    {
-      tier: 'Premium',
-      price: '$530',
-      services: ['Standard + Premium features', '24/7 support'],
-    },
-  ];
+ 
 
   return (
     <div className="pricing-page">
-    <nav className="navbar">
-      <button className="back-button" onClick={handleBack}>Back</button>
-      <h1 className="title">Pricing</h1>
-    </nav>
-    <div className="pricing-cards">
-      {pricingData.map((tier, index) => (
-        <div key={index} className="pricing-card">
-          <h2>{tier.tier}</h2>
-          <h3>{tier.price} / month</h3>
+      <h1>Pricing</h1>
+      <p>Welcome to MW Software Development. Choose the plan that best suits your project needs.</p>
+
+      <div className="pricing-cards">
+        <div className="pricing-card basic">
+          <h3>Basic Plan</h3>
+          <p className="price">Free</p>
           <ul>
-            {tier.services.map((service, index) => (
-              <li key={index}>{service}</li>
-            ))}
+            <li>Up to 2 hours of development</li>
+            <li>Initial consultation and requirement analysis</li>
+            <li>Basic UI/UX design</li>
+
+            <li>Development of simple applications or prototypes</li>
           </ul>
-          <button className="get-button" onClick={handleGetButtonClick}>
-            Get
-          </button>
+          <button onClick={handleGetButtonClick} className="btn current-plan">Request Plan</button>
         </div>
-      ))}
-   </div>
-</div>
+
+        <div className="pricing-card premium">
+          <h3>Standard Plan</h3>
+          <p className="price">$200</p>
+          <p className="per-month">per month</p>
+          <ul>
+            <li>Up to 50 hours of development</li>
+            <li>Comprehensive requirement analysis</li>
+            <li>Custom UI/UX design</li>
+            <li>Development of intermediate applications</li>
+            <li>Advanced testing and bug fixes</li>
+            <li>Integration with third-party services</li>
+            <li>Email and phone support</li>
+          </ul>
+          <button onClick={handleGetButtonClick}  className="btn choose">Choose</button>
+        </div>
+
+        <div className="pricing-card premium">
+          <h3>Premium Plan</h3>
+          <p className="price">$300</p>
+          <p className="per-month">per month</p>
+          <ul>
+            <li>Up to 100 hours of development</li>
+            <li>Detailed requirement analysis and project planning</li>
+            <li>Custom UI/UX design with revisions</li>
+            <li>Development of complex applications and systems</li>
+            <li>Full testing, debugging, and optimization</li>
+            <li>Integration with multiple third-party services</li>
+            <li>Email, phone, and video call support</li>
+            <li>Post-deployment support and maintenance</li>
+          </ul>
+          <button onClick={handleGetButtonClick}  className="btn choose">Choose</button>
+        </div>
+
+        <div className="pricing-card enterprise">
+          <h3>Enterprise Plan</h3>
+          <p className="price">Custom Pricing</p>
+          <ul>
+            <li>Custom hours of development based on project scope</li>
+            <li>Detailed project analysis and consultation</li>
+            <li>Custom UI/UX design with multiple revisions</li>
+            <li>Development of highly complex applications and systems</li>
+            <li>Comprehensive testing, debugging, and optimization</li>
+            <li>Integration with enterprise systems and services</li>
+            <li>Dedicated support team</li>
+            <li>Ongoing support and maintenance</li>
+          </ul>
+          <button onClick={handleGetButtonClick}  className="btn choose">Choose</button>
+        </div>
+      </div>
+
+      <div className="addons">
+        <h2>Add-Ons</h2>
+        <ul>
+          <li><strong>Additional Development Hours</strong>: $50/hour</li>
+          <li><strong>Priority Support</strong>: $100/month</li>
+          <li><strong>Monthly Maintenance</strong>: $200/month</li>
+        </ul>
+      </div>
+
+      <div className="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div className="faq-item">
+          <h3>How do I know which plan is right for me?</h3>
+          <p>During our initial consultation, we'll help you identify the plan that best suits your project’s needs and budget.</p>
+        </div>
+        <div className="faq-item">
+          <h3>Can I upgrade my plan later?</h3>
+          <p>Yes, you can upgrade your plan at any time. We’ll adjust the pricing based on the additional services required.</p>
+        </div>
+        <div className="faq-item">
+          <h3>What if I need more than 100 hours of development?</h3>
+          <p>For projects requiring extensive development, we recommend our Enterprise Plan, which offers custom pricing based on your specific requirements.</p>
+        </div>
+        <div className="faq-item">
+          <h3>Do you offer post-deployment support?</h3>
+          <p>Yes, all plans include a basic level of post-deployment support. Additional support can be added as needed.</p>
+        </div>
+      </div>
+
+      <div className="get-started">
+        <h2>Get Started</h2>
+        <p>Ready to bring your project to life? <a href="#contact">Contact us</a> today to discuss your requirements and get a custom quote.</p>
+      </div>
+    </div>
   );
 };
-
-
 
 export default PricingPage;

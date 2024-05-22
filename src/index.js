@@ -5,6 +5,7 @@ import App from './App';
 
 import PricingPage from './otherpages/Pricing';
 import RequestPage from './otherpages/Send_request';
+import ProjectsPage from './otherpages/ProjectsPage';
 
 const Index = () => {
   return (
@@ -13,6 +14,7 @@ const Index = () => {
         <Route exact path="/" element={<App/>} />
         <Route exact path="/pricing" element={<PricingPage/>} />
         <Route path="/send-request" element={<RequestPage/>} />
+        <Route path='project' element={<ProjectsPage/>}/>
         <Route path="*" element={<h1>Page not found</h1>} />
       </Routes>
     </Router>

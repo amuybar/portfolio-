@@ -1,94 +1,119 @@
-.pricing-page{
-  background-color: #c0dbf8;
+.pricing-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
   margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  height: 100%;
-
-}
-/* pricing.css */
-
-/* Navbar styles */
-.navbar {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
+  background: linear-gradient(to bottom right, #5e45cc, #b3d9ff);
 }
 
-.back-button {
-  background-color: transparent;
-  color: #fff;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
+.pricing-page h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #ffffff;
 }
 
-.title {
-  margin: 0;
-}
-
-/* Pricing cards styles */
 .pricing-cards {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 20px;
-  flex-wrap: wrap;
-  padding: 20px;
 }
 
 .pricing-card {
-  background-color: #f9f9f9;
+  background-color: white;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 300px;
-  text-align: center;
-}
-
-.pricing-card h2 {
-  color: #333;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  position: relative;
 }
 
 .pricing-card h3 {
-  color: #007bff;
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.price {
+  font-size: 32px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.per-month {
+  font-size: 16px;
+  color: #666;
   margin-bottom: 20px;
 }
 
 .pricing-card ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
+  margin: 0 0 20px 0;
 }
 
 .pricing-card ul li {
   margin-bottom: 10px;
+  color: #666;
 }
 
-.get-button {
-  background-color: #007bff;
-  color: #fff;
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.get-button:hover {
-  background-color: #0056b3;
+.basic {
+  border-top: 5px solid #00c853;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-  .pricing-cards {
-    flex-direction: column;
-  }
+.basic .btn {
+  background-color: #00c853;
+  color: white;
+}
 
-  .pricing-card {
-    width: 100%;
-  }
+.basic .btn.current-plan {
+  background-color: #b9f6ca;
+  color: #00c853;
+  cursor: default;
+}
 
+.premium {
+  border-top: 5px solid #6200ea;
+}
+
+.premium .btn {
+  background-color: #6200ea;
+  color: white;
+}
+
+.enterprise {
+  border-top: 5px solid #d50000;
+}
+
+.enterprise .btn {
+  background-color: #d50000;
+  color: white;
+}
+
+.addons,
+.faq,
+.get-started {
+  margin-top: 40px;
+}
+
+.addons ul, .faq .faq-item {
+  margin-bottom: 20px;
+}
+
+.get-started a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.get-started a:hover {
+  text-decoration: underline;
 }
